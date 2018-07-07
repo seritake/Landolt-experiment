@@ -38,21 +38,21 @@ public class LandoltBehavior : MonoBehaviour {
     }
 
     public void expand() {
-        this.GetComponent<RectTransform>().localScale += new Vector3(2, 2, 0);
+        this.GetComponent<RectTransform>().localScale += new Vector3(0.5f, 0.5f, 0);
         changeDirection();
         scale += 1;
         scaleText.text = scale.ToString();
     }
 
     public void reduct() {
-        this.GetComponent<RectTransform>().localScale -= new Vector3(2, 2, 0);
+        this.GetComponent<RectTransform>().localScale -= new Vector3(0.5f, 0.5f, 0);
         changeDirection();
         scale -= 1;
         scaleText.text = scale.ToString();
     }
 
     public void changeDirection() {
-        int rand = Random.Range(0, 8);
-        this.GetComponent<RectTransform>().rotation = Quaternion.Euler(0, 0, rand * 45);
+        int rand = Random.Range(0, 4);
+        this.GetComponent<RectTransform>().rotation = Quaternion.Euler(0, 0, rand * 90);
     }
 }
